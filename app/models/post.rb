@@ -24,10 +24,6 @@ class Post < ApplicationRecord
   end
 
   def mean_rating
-    total_score = 0
-    ratings.each do |rating|
-      total_score += rating.score
-    end
-    total_score / ratings.count
+
   end
 end
