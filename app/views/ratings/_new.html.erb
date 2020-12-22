@@ -1,0 +1,4 @@
+<%= form_for([@post, Rating.new]) do |form| %>
+    Rating: <%= number_field(:rating, :score, in: 1..5, step: 1) %>
+    <%= form.submit %>
+<% end %>

@@ -65,3 +65,7 @@ gem 'bootstrap-generators', git: 'https://github.com/decioferreira/bootstrap-gen
 gem 'jquery-rails'
 gem 'annotate'
 gem 'rubocop'
+gem 'paperclip'
+gem 'devise'
+gem 'chartkick'
+

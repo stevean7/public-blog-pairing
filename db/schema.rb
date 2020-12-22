@@ -10,6 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_04_11_035605) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "post_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.integer "post_id"
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "picture_file_name"
+    t.string "picture_content_type"
+    t.bigint "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.index ["post_id"], name: "index_items_on_post_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_ratings_on_post_id"
+  end
 
 end
