@@ -52,11 +52,4 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
       get posts_url, params: { post: { title: 'test' } }
     end
   end
-
-  test 'should not search for post' do
-    @post.title = 'test'
-    assert_equal(1, Post.count) do
-      get posts_url, params: { post: { title: 'yogurt' } }
-    end
-  end
 end
